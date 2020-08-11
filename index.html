@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+   
+    <title>precent</title>
+    
+    
+   
+</head>
+<body><div class="a">
+    Small value<br/><input id="small"><br/>
+    how much <br/><input id="precent">precent of<br/>
+    Big value<br/><input id="big"><br/>
+    
+    <button id=ent onclick="main()">"Result"</button><br/>
+   
+    <div id="g"></div>
+</div>
+</body>
+<style>
+ .a {
+    background-color:rgb(42, 40, 46);
+    color: white;
+    border: 2px solid black;
+    margin: 20px;
+    padding: 20px;
+    font-size: 30px;
+    
+   }
+ input{
+      margin-left: 20%;
+      
+      font-size: 20px;
+      }
+ button{
+     height: 50px;
+     width: 120px;
+     font-size: 30px;
+ }
+ #g {
+     height: 50px;
+     width: 10px;
+     background-color:rgb(77, 79, 255)
+
+ }
+</style>
+<script >
+    function main(){
+        var big=document.getElementById("big").value;
+        if ( document.getElementById("precent").value!=""){
+            var pre=document.getElementById("precent").value;
+            var res=(pre*big)/100
+        }
+        else{
+        var sml=document.getElementById("small").value;
+    
+    
+        var res=(sml/big)*100
+        }
+   
+    document.getElementById("g").style.width="50%";
+    document.getElementById("g").innerText=res;
+}
+    </script>
+</html>
