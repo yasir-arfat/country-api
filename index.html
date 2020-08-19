@@ -4,19 +4,24 @@
 <meta charset='utf-8'>
 <title>precent</title>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
 
 
 </head>
 
 <body>
     <div class="a">
-    Small value<br/><input id="small"><br/>
+        <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="small">small value</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+          </div><br/>
     how much <br/><input id="precent">precent of<br/>
     Big value<br/><input id="big"><br/>
     
-    <button id=ent onclick="main()">"Result"</button><br/>
+    <button type="button" class="btn btn-primary" onclick="main()">"Result"</button><br/>
    
     <div id="g"></div>
     </div>
@@ -36,16 +41,8 @@
         font-size: 30px;
         width: auto;
     }
-    input{
-        margin-left: 20%;
-        font-size: 20px;
-    }
-    button{
-        height: 50px;
-        width: auto;
-        font-size: 30px;
-        margin-left: 30%;
-    }
+    
+
     #g {
         height: 35px;
         width: 0px;
