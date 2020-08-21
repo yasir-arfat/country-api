@@ -6,26 +6,28 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 
 </head>
 
 <body>
-    <div class="a">
+    <div class="container a">
         <div class="input-group input-group-lg">
-             <input type="text" class="form-control" placeholder="Small value" id="small">
-             <input type="text" class="form-control" placeholder="Percent" id="precent">
-         <div class="input-group input-group-lg">
-            <input type="text" class="form-control" placeholder="Big value" id="big">
+        <input type="text" class="form-control" placeholder="Small value" id="small"></div>
+        
+        <div class="input-group input-group-lg">
+        <input type="text" class="form-control" placeholder="Percent" id="precent"></div>
+        
+        <div class="input-group input-group-lg">
+        <input type="text" class="form-control" placeholder="Big value" id="big"></div>
+           
+        <button type="button" class="btn btn-primary" onclick="main()">"Result"</button>
+        <h1 class="display-4"id= "dis"></h1>
+        <div class="progress" >
+        <div class="progress progress-bar" role="progressbar" id="g" style="width: 0%" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-        </div>
-    <button type="button" class="btn btn-primary" onclick="main()">"Result"</button>
-    <h1 class="display-4"id= "dis"></h1>
-    <div class="progress" >
-        <div class="progress-bar" role="progressbar" id="g" style="width: 0%" aria-valuemin="0" aria-valuemax="100"></div>
-      </div>
     </div>
-    <div id="h"><h2>By: yasir arfat.<h2></div>
+    <h6 class="display-4">By: Yasir Arfat</h6>
 </body>
 
 <style>
@@ -38,7 +40,7 @@
         /* margin-left: 30%; */
         margin-top: 10%;
         padding: 20px;
-        font-size: 50px;
+       
         width: auto;
     }
     
@@ -48,7 +50,10 @@
         
         background-color:rgb(0, 98, 255)
     }
-    #h{margin-left: 54%;}
+   .display-4{
+    font-size:x-large;
+    text-align:right;   
+   }
 </style>
 
 <script >
