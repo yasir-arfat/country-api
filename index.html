@@ -1,121 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>counrty api</title>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-    crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Tangerine"
+    />
+     <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body >
-    <table class="table table-striped " id="mytable" >
-        <thead class="thead-dark"
-        
-      
-        >
-            <tr 
-     >
-                <th>#</th>
-                <th>Name</th>
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body><div class="col-xs-12">
+    <table class="table table-striped" id="mytable">
+      <thead class="thead-dark">
+        <tr>
+          <th>#</th>
+          <th>Name</th>
 
-               
-                <th>Population</th>
-                 <th>Area</th>
-                <th>Capital</th>
+          <th>Population</th>
+          <th>Area</th>
+          <th>Capital</th>
+          <th>Region</th>
 
-                
-                <th>Flag</th>
+          <th>Flag</th>
+        </tr>
+      </thead>
+      <tbody id="r1"></tbody>
+    </table>
 
-                 
-            </tr>
-        </thead>
-        <tbody id="r1"></tbody>
-    </table>            
-    
     <script>
-        
-        
-        
-        
-        var url="https://restcountries.eu/rest/v2/all";
-        $( document ).ready(function(){
+      var url = "https://restcountries.eu/rest/v2/all";
+      $(document).ready(function () {
+        fetch(url)
+          .then((resp) => resp.json()) // Transform the data into json
+          .then(function (data) {
+            data;
+            // Create and append the li's to the ul
+            c = 0;
+            var rs = "";
+            for (i in data) {
+              c++;
+              rs += "<tr>";
+
+              rs += "<td>" + c + "</td>";
+              rs += "<td>" + data[i].name + "</td>";
+              rs += "<td>" + data[i].population + "</td>";
+              rs += "<td>" + data[i].area + "</td>";
+              rs += "<td>" + data[i].capital + "</td>";
+              rs += "<td>" + data[i].subregion + "</td>";
 
 
+              rs +=
+                "<td><Img src= ' " + data[i].flag + "'style=height:50px></td>";
+              rs += "</tr>";
+            }
+            document.getElementById("r1").innerHTML = rs;
 
-                                fetch(url)
-                    .then((resp) => resp.json()) // Transform the data into json
-                    .then(function(data) {
-                        // Create and append the li's to the ul
-                                c=0;
-                                var rs="";
-                                for (i in data){
-                                c++
-                                rs+="<tr>";
-                                                                
-                                rs+="<td>"+c+"</td>";
-                                rs+="<td>"+data[i].name+"</td>";
-   rs+="<td>"+data[i].population+"</td>";
-    rs+="<td>"+data[i].area+"</td>";
-      rs+="<td>"+data[i].capital+"</td>";
-
-// for(j in data[i].languages){
-
-
-//    rs+="<li>"+ String(data[i].languages)+"</li>";}    
-
-
-
-
-
-                                rs+="<td><Img src= ' "+data[i].flag+"'style=height:50px></td>";
-                                rs+="</tr>"
-                                }
-                                document.getElementById("r1").innerHTML=rs
-                               
-                                  $('#mytable').DataTable();
-
-
-                        })
-                    
-
-
-
-            
-
-
-
-
-                      
-
-
-
-         });
-
-
-
-
-  
-
-  
+            $("#mytable").DataTable();
+          });
+      });
     </script>
-   <div style=
-   
-   
-   "
-   position: absolute;
-   z-index: 3;
-  bottom:  0px;
-  text-align: center;
-   color: white;
-   position: fixed;
-   background-color:rgb(0, 0, 0);
-   width: 100%;
-   height: 50px;" >
-   by: yasir arfat <br>for sumera ❤</div>
+    <div
+      style="
+        color: rgb(255, 255, 255);
 
-</body>
+        font-size: 50px;
+        /* text-shadow: 1.5px 1.5px 1.5px   rgb(255, 255, 255);   */
+
+        font-family: 'Tangerine', serif;
+        position: fixed;
+
+        z-index: 3;
+        bottom: 0px;
+        text-align: center;
+
+        background-color: rgb(31, 31, 31);
+        width: 100%;
+        height: 80px;
+      "
+    >
+      by: yasir arfat
+    </div></div>
+  </body>
 </html>
